@@ -1,0 +1,180 @@
+/* Full page settings */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Background animation */
+body {
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(243, 241, 237, 0.5);
+    z-index: 1;
+}
+
+/* Container to keep content centered */
+.container {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Heading animation */
+h1 {
+    font-size: 32px;
+    color: black;
+    margin-bottom: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #edd77e, 0 0 10px #3c44e3; }
+    100% { text-shadow: 0 0 20px #ffdd7e, 0 0 30px #ffdd7e; }
+}
+
+/* Cards grid */
+.attributes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.attribute-card {
+    background:     rgba(232, 114, 78, 0.559);
+    border-radius: 12px;
+    padding: 15px 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.attribute-card h3 {
+    margin: 0 0 5px 0;
+    color: #121dc0;
+}
+
+.attribute-card p {
+    font-size: 14px;
+    color: #fff;
+    margin: 0;
+}
+
+.attribute-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Button */
+a.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 10px;
+    background-color: #ff7e5f;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a.btn:hover {
+    background-color: #e96443;
+    transform: scale(1.05);
+}
+
+/* Responsive for mobile */
+@media(max-width: 600px) {
+    h1 { font-size: 26px; }
+    .attributes-container { grid-template-columns: 1fr; }
+}
+
+/* ---------- Simple home page styling ---------- */
+
+.simple-body {
+  background-color: #f7f8fa;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.simple-container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.simple-container h1 {
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.form-grid input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-grid input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+.simple-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.simple-btn:hover {
+  background-color: #0056b3;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e9f7ef;
+  border: 1px solid #b2dfdb;
+  border-radius: 6px;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

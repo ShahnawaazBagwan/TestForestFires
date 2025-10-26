@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <div class='login'>
-        <h1>FWI Prediction</h1>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FWI Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="simple-body">
+  <div class="simple-container">
+    <h1>🔥 Fire Weather Index Prediction</h1>
 
-        <!-- main input for receiving query for our model-->
-         <form action="{{url_for('predict_datapoints')}}" method= "POST">
-            <input type="text" name= "Temperature" placeholder="Temperature" required=" required" /><br>
-            <input type="text" name= "RH" placeholder="RH" required=" required" /><br>
-            <input type="text" name= "Ws" placeholder="Ws" required=" required" /><br>
-            <input type="text" name= "Rain" placeholder="Rain" required=" required" /><br>
-            <input type="text" name= "FFMC" placeholder="FFMC" required=" required" /><br>
-            <input type="text" name= "DMC" placeholder="DMC" required=" required" /><br>
-            <input type="text" name= "ISI" placeholder="ISI" required=" required" /><br>
-            <input type="text" name= "Classes" placeholder="Classes" required=" required" /><br>
-            <input type="text" name= "Region" placeholder="Region" required=" required" /><br>
+    <form method="POST" action="{{ url_for('predict_datapoints') }}">
+      <div class="form-grid">
+        <input name="Temperature" placeholder="Temperature (°C)" required>
+        <input name="RH" placeholder="Relative Humidity (%)" required>
+        <input name="Ws" placeholder="Wind Speed (km/h)" required>
+        <input name="Rain" placeholder="Rain (mm)" required>
+        <input name="FFMC" placeholder="FFMC" required>
+        <input name="DMC" placeholder="DMC" required>
+        <input name="ISI" placeholder="ISI" required>
+        <input name="Classes" placeholder="Classes (0/1)" required>
+        <input name="Region" placeholder="Region (numeric)" required>
+      </div>
 
-            <button type='submit' class="btn btn-primary btn-block btn-large"> Predict </button>
-        </form>
-    <h2>
-        FWI prediction is {{results}}
-    </h2>
-    <body>
+      <button type="submit" class="simple-btn">Predict</button>
+    </form>
+
+    {% if results is not none %}
+      <div class="result-box">
+        <p><strong>Prediction Result:</strong> {{ results }}</p>
+      </div>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}" class="back-link">← Back to Attributes</a>
+  </div>
 </body>
-</html>         
+</html>

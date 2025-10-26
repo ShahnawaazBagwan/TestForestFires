@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FWI Dataset Overview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Welcome to home page</h1>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>🔥 Welcome to the Fire Weather Index (FWI) Prediction App 🔥</h1>
+        <p>Here are the dataset attributes you will use for prediction:</p>
+
+        <div class="attributes-container">
+            <div class="attribute-card"><h3>Date</h3><p>(DD/MM/YYYY) Day, month (June to September), year (2012)</p></div>
+            <div class="attribute-card"><h3>Temp</h3><p>Temperature at noon (max) in Celsius: 22 to 42</p></div>
+            <div class="attribute-card"><h3>RH</h3><p>Relative Humidity in %: 21 to 90</p></div>
+            <div class="attribute-card"><h3>Ws</h3><p>Wind speed in km/h: 6 to 29</p></div>
+            <div class="attribute-card"><h3>Rain</h3><p>Total rain in mm: 0 to 16.8</p></div>
+            <div class="attribute-card"><h3>FFMC</h3><p>Fine Fuel Moisture Code index: 28.6 to 92.5</p></div>
+            <div class="attribute-card"><h3>DMC</h3><p>Duff Moisture Code index: 1.1 to 65.9</p></div>
+            <div class="attribute-card"><h3>DC</h3><p>Drought Code index: 7 to 220.4</p></div>
+            <div class="attribute-card"><h3>ISI</h3><p>Initial Spread Index: 0 to 18.5</p></div>
+            <div class="attribute-card"><h3>BUI</h3><p>Buildup Index: 1.1 to 68</p></div>
+            <div class="attribute-card"><h3>FWI</h3><p>Fire Weather Index: 0 to 31.1</p></div>
+            <div class="attribute-card"><h3>Classes</h3><p>Two classes: Fire and Not Fire</p></div>
+        </div>
+
+        <a href="{{ url_for('predict_datapoints') }}" class="btn">Go to Prediction Page</a>
+    </div>
 </body>
 </html>
